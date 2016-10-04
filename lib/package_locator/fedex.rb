@@ -1,5 +1,5 @@
 module Carrier
-  class UPS
+  class FedEx
 
     def initalize(tracking_number, session)
       @tracking_number = tracking_number
