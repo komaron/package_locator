@@ -13,6 +13,11 @@ Very standard approach to grabbing tracking information, given a tracking number
 ```bash
 $ bundle exec ruby bin/track_package [tracking_number] [carrier]
 ```
+Example:
+```bash
+bundle exec ruby bin/track_package 1Z12345644 UPS
+```
+
 
 
 
