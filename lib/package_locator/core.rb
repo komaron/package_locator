@@ -2,20 +2,16 @@ require 'capybara'
 
 module PackageLocator
   class Core
-    attr_accessor :session
-
-    def initialize
-      @session = PackageLocator::Core.register_session
-    end
 
     def self.track_package(tracking_number, carrier)
+      session = PackageLocator::Core.register_session
       case carrier.downcase
       when 'ups'
-        Carrier::UPS.locate_package(tracking_number)
+        Carrier::UPS.locate_package(tracking_number, session)
       when 'usps'
-        raise NotImplementedError
+        Carrier::USPS.locate_package(tracking_number, session)
       when 'fedex'
-        raise NotImplementedError
+        Carrier::FedEx.locate_package(tracking_number,session)
       else
         "Sorry, no support for carrier: #{carrier}"
       end
