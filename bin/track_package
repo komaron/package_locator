@@ -1,0 +1,17 @@
+lib = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+Bundler.require(:default)
+
+require 'package_locator'
+
+if ARGV.size <= 0 or ARGV.size > 2
+  $stderr.puts "Usage: #{$0} Please specify your tracking id and carrier"
+  $stderr.puts "       Carriers: [ UPS | USPS | FedEx ]"
+  $stderr.puts "       Example usage: bundle exec ruby bin/trackpackage 1Z123443344W33 UPS"
+  $stderr.puts ""
+end
+
+tracking = ARGV[0].to_s
+carrier = ARGV[1].to_s
+
+PackageLocator::Core.track_package(tracking,carrier)
