@@ -18,6 +18,11 @@ Example:
 bundle exec ruby bin/track_package 1Z12345644 UPS
 ```
 
+## Supported Carriers
+  * __UPS__
+  * __USPS__
+  * __FedEx__
+
 
 
 
