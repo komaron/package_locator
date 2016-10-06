@@ -8,7 +8,7 @@ require 'package_locator'
 require 'optparse'
 options = {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: example.rb [options]"
+  opts.banner = "Usage: bundle exec ruby bin/track_package [tracking_number] [carrier]"
 
   opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
     options[:verbose] = v
@@ -18,7 +18,7 @@ end.parse!
 if ARGV.size <= 0 or ARGV.size > 2
   $stderr.puts "Usage: #{$0} Please specify your tracking id and carrier"
   $stderr.puts "       Carriers: [ UPS | USPS | FedEx ]"
-  $stderr.puts "       Example usage: bundle exec ruby bin/trackpackage 1Z123443344W33 UPS"
+  $stderr.puts "       Example usage: bundle exec ruby bin/track_package 1Z123443344W33 UPS"
   $stderr.puts ""
 end
 
