@@ -15,7 +15,13 @@ $ bundle exec ruby bin/track_package [tracking_number] [carrier]
 ```
 Example:
 ```bash
-bundle exec ruby bin/track_package 1Z12345644 UPS
+$ bundle exec ruby bin/track_package 1Z12345644 UPS
+```
+
+## Test
+Never forget to test!
+```bash
+$ bundle exec rspec
 ```
 
 ## Supported Carriers
