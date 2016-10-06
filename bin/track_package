@@ -1,8 +1,19 @@
+#!/usr/bin/env ruby
+
 lib = File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Bundler.require(:default)
 
 require 'package_locator'
+require 'optparse'
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: example.rb [options]"
+
+  opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
+    options[:verbose] = v
+  end
+end.parse!
 
 if ARGV.size <= 0 or ARGV.size > 2
   $stderr.puts "Usage: #{$0} Please specify your tracking id and carrier"
