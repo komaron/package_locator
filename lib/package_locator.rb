@@ -1,4 +1,5 @@
 require 'package_locator/core'
-require 'package_locator/fedex'
-require 'package_locator/ups'
-require 'package_locator/usps'
+require 'package_locator/carriers/factory'
+require 'package_locator/carriers/fedex'
+require 'package_locator/carriers/ups'
+require 'package_locator/carriers/usps'
